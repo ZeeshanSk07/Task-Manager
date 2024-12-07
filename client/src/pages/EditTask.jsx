@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './EditTask.css';
 import { useParams, useNavigate } from "react-router-dom";
-import { getTasks, updateTask } from "../apis/tasks"; // Make sure updateTask is implemented
+import { getTasks, updateTask } from "../apis/tasks"; 
+import toast from 'react-hot-toast';
 
 function EditTask() {
   const { id } = useParams();
@@ -37,8 +38,9 @@ function EditTask() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await updateTask(id, task); // Send the updated task to the server
-      navigate(`/dashboard/${id}`); // Redirect to task details after updating
+      await updateTask(id, task);
+      toast.success('Task updated successfully');
+      navigate(`/dashboard/${id}`); 
     } catch (error) {
       console.error("Error updating task:", error);
     }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createTask } from "../apis/tasks";
 import { useNavigate } from "react-router-dom";
+import toast from 'react-hot-toast';
 
 function CreateTask() {
   const [title, setTitle] = useState("");
@@ -12,6 +13,7 @@ function CreateTask() {
   const handleCreate = async (e) => {
     e.preventDefault();
     await createTask({ title, description, dueDate, priority });
+    toast.success('Task created successfully');
     navigate("/dashboard");
   };
 

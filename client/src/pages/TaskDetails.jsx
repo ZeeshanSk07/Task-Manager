@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getTasks, deleteTask } from "../apis/tasks"; 
+import toast from "react-hot-toast";
 
 function TaskDetails() {
   const { id } = useParams(); 
@@ -27,6 +28,7 @@ function TaskDetails() {
   const handleDelete = async () => {
     try {
       await deleteTask(id);
+      toast.success('Task deleted successfully')
       navigate("/dashboard");
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -35,7 +37,7 @@ function TaskDetails() {
 
   return (
     <>
-    <button style={{width:'8vw', fontSize:'1.1rem', margin:'2rem 3rem'}} onClick={(e)=>navigate('/dashboard')}>Back</button>
+    <button style={{width:'7vw', fontSize:'1rem', margin:'2rem 3rem'}} onClick={(e)=>navigate('/dashboard')}>Back</button>
     <div className="task-details-container">
       {task ? (
         <>
