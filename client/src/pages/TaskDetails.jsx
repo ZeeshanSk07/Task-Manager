@@ -34,6 +34,8 @@ function TaskDetails() {
   };
 
   return (
+    <>
+    <button style={{width:'8vw', fontSize:'1.1rem', margin:'3rem 3rem'}} onClick={(e)=>navigate('/dashboard')}>Back</button>
     <div className="task-details-container">
       {task ? (
         <>
@@ -51,7 +53,9 @@ function TaskDetails() {
         <p>Loading...</p>
       )}
     </div>
+    </>
   );
+  
 }
 
 export default TaskDetails;
