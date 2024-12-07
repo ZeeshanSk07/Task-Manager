@@ -26,8 +26,8 @@ function TaskDetails() {
 
   const handleDelete = async () => {
     try {
-      await deleteTask(id); 
-      navigate("/dashboard"); 
+      await deleteTask(id);
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error deleting task:", error);
     }
@@ -35,7 +35,7 @@ function TaskDetails() {
 
   return (
     <>
-    <button style={{width:'8vw', fontSize:'1.1rem', margin:'3rem 3rem'}} onClick={(e)=>navigate('/dashboard')}>Back</button>
+    <button style={{width:'8vw', fontSize:'1.1rem', margin:'2rem 3rem'}} onClick={(e)=>navigate('/dashboard')}>Back</button>
     <div className="task-details-container">
       {task ? (
         <>
