@@ -1,0 +1,129 @@
+
+
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('https://img.freepik.com/free-vector/isometric-time-management-concept-illustrated_52683-55535.jpg?semt=ais_hybrid');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  font-family: Arial, sans-serif;
+  position: relative; 
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: -1;
+}
+
+.task-list-container {
+  position: relative; 
+  z-index: 1; 
+  overflow-y: auto; 
+  max-height: 100vh;
+  scrollbar-width: none;
+}
+
+
+
+.edit-task-container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  z-index: 1; 
+}
+
+
+.auth-container,
+.task-list-container,
+.task-details-container,
+.create-task-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+.priority-high {
+  background-color: #ffcccc; 
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.priority-medium {
+  background-color: #fff3cd; 
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.priority-low {
+  background-color: #d4edda; 
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-top: 5px;
+}
+h3 {
+  text-transform: capitalize; 
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #e9ecef;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+li:hover {
+  background: #dcdde1;
+}
